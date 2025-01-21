@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     $file = 'saved.json';
     $data = json_decode(file_get_contents('php://input'), true);
     file_put_contents($file, json_encode($data));
@@ -8,6 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 } else {
     http_response_code(405);
-    header('Allow: POST');
+    header('Allow: PUT');
     exit;
 }
