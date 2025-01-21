@@ -45,4 +45,4 @@ organizeBlocks();
 
 drawBlockList();
 
-export { addBlock, getBlocks, resetBlocks };
+export { addBlock, getBlocks, resetBlocks, removeBlock };

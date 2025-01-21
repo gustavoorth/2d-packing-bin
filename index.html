@@ -37,15 +37,14 @@
                 <hr class="my-4">
                 <div class="row">
                     <div class="mb-3">
-                        <label for="size" class="form-label">Max Bin Size: <span class="text-muted">(width x height) (if blank, the biggest block's size will be used)</span></label>
-                        <input type="text" class="form-control" id="size" aria-describedby="sizeHelp">
+                        <label for="binSize" class="form-label">Max Bin Size: <span class="text-muted">(width x height) (if blank, the biggest block's size will be used)</span></label>
+                        <input type="text" class="form-control" id="binSize" aria-describedby="binSizeHelp">
                     </div>
                     <button type="button" class="btn btn-info btn-run">Run Simulation</button>
                     <div class="col-12">
                         <h3>Current bin</h3>
                         <div id="bin" style="border: 1px solid black; width: 100%; height: 200px; position: relative;">
-                            <div id="block1" style="background-color: lightblue; width: 50px; height: 70px; position: absolute; top: 0px; left: 0px;"></div>
-                            <div id="block2" style="background-color: lightgreen; width: 80px; height: 60px; position: absolute; top: 0px; left: 50px;"></div>
+                            
                         </div>
                     </div>
                 </div>
