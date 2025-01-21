@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Fundo Gaveta 1",
+        "width": 375,
+        "height": 88
+    },
+    {
+        "name": "Fundo Gaveta 2",
+        "width": 375,
+        "height": 88
+    },
+    {
+        "name": "Lateral Gaveta 1",
+        "width": 380,
+        "height": 88
+    },
+    {
+        "name": "Lateral Gaveta 2",
+        "width": 380,
+        "height": 88
+    },
+    {
+        "name": "Lateral Gaveta 3",
+        "width": 380,
+        "height": 88
+    },
+    {
+        "name": "Lateral Gaveta 4",
+        "width": 380,
+        "height": 88
+    },
+    {
+        "name": "Costas Gaveteiro",
+        "width": 608,
+        "height": 432
+    },
+    {
+        "name": "Lateral Gaveteiro 2",
+        "width": 608,
+        "height": 400
+    },
+    {
+        "name": "Lateral Gaveteiro 1",
+        "width": 608,
+        "height": 400
+    }
+]

@@ -1,34 +1,56 @@
+<!doctype html>
 <html>
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="teste.css" />
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
-        <div class='blocks'>
-            <label for='blocks'>Blocks: W x H [x N] - </br>
-                <pre>
-    For the purposes of this demo sizes must be entered from largest to smallest.
-    This will be taken care of using a sort algorithm or through the UI eventually.</br>
-    Maximum sheet size is 100x80</br>
-    8x10       = '100x80'
-    5x7        = '50x70'
-    3x5        = '50x35'
-    wallet     = '25x35'
-    miniwallet = '25x17.5'
-
-    Example: '50x70'
-             '50x35x2'
-
-                </pre>
-            </label>
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center">2D Packing Bin Simulator</h2>
+                <div class="col-3">
+                        <h3>Register Block</h3>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name: <span class="text-muted">(optional)</span></label>
+                            <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="size" class="form-label">Size: <span class="text-muted">(width x height x quantity)</span></label>
+                            <input type="text" class="form-control" id="size" aria-describedby="sizeHelp">
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-primary btn-register">Register</button>
+                            <button type="button" class="btn btn-success btn-remember">Remember</button>
+                            <button type="button" class="btn btn-danger btn-reset">Reset</button>
+                        </div>
+                </div>
+                <div class="col-9">
+                    <h3>Registered blocks</h3>
+                    <ul id="registered-blocks" style="columns: 3; -webkit-columns: 3; -moz-columns: 3; list-style-type: none;">
+                        
+                    </ul>
+                </div>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="size" class="form-label">Max Bin Size: <span class="text-muted">(width x height) (if blank, the biggest block's size will be used)</span></label>
+                        <input type="text" class="form-control" id="size" aria-describedby="sizeHelp">
+                    </div>
+                    <button type="button" class="btn btn-info btn-run">Run Simulation</button>
+                    <div class="col-12">
+                        <h3>Current bin</h3>
+                        <div id="bin" style="border: 1px solid black; width: 100%; height: 200px; position: relative;">
+                            <div id="block1" style="background-color: lightblue; width: 50px; height: 70px; position: absolute; top: 0px; left: 0px;"></div>
+                            <div id="block2" style="background-color: lightgreen; width: 80px; height: 60px; position: absolute; top: 0px; left: 50px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="nofit">
-            
-        </div>
-        <div id="preview">
-        </div>
-        <script type="text/javascript" src="teste.js"></script>
+        <script type="module" src="app.js"></script>
     </body>
 </html>
