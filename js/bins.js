@@ -19,4 +19,4 @@ const setBinMaxSize = (width, height) => {
 
 const createBin = () => bins.push({ blocks: [], width: binMaxWidth, height: binMaxHeight });
 
-export { placeBlock, getBins, setBinMaxSize, createBin };
+export { placeBlock, getBins, setBinMaxSize, createBin, binMaxHeight, binMaxWidth };

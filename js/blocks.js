@@ -1,4 +1,5 @@
 import { drawBlockList } from "./blockList.js";
+import { binMaxHeight, binMaxWidth } from "./bins.js";
 
 let blocks = await fetch('saved.json').then(response => response.json());
 
@@ -40,4 +41,20 @@ const organizeBlocks = () => {
     });
 };
 
-export { createBlock, getBlocks, resetBlocks, removeBlock, organizeBlocks };
+const organizeForPlacing = (blocks) => {
+    return blocks.map(block => {
+        const { name, width, height } = block;
+        if (binMaxHeight >= width && binMaxWidth >= height) {
+            const widthDiff = binMaxWidth - block.width;
+            const heightDiff = binMaxWidth - block.height;
+
+            if (heightDiff > widthDiff) {
+                return { name, width: block.height, height: block.width };
+            }
+        }
+        return { name, width, height };
+    });
+}
+
+
+export { createBlock, getBlocks, resetBlocks, removeBlock, organizeBlocks, organizeForPlacing };

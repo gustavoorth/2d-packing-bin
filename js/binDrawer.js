@@ -1,9 +1,9 @@
-import { bins } from "./bins.js";
+import { getBins } from "./bins.js";
 
 const drawBin = (bin) => {
     const binDiv = document.querySelector('#bin');
     binDiv.innerHTML = '';
-    for (const block of bins[bin].blocks) {
+    for (const block of getBins()[bin].blocks) {
         const blockDiv = document.createElement('div');
         blockDiv.style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
         blockDiv.style.width = `${block.width}px`;
