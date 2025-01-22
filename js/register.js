@@ -1,4 +1,4 @@
-import { addBlock, getBlocks } from "./blocks.js";
+import { createBlock, getBlocks } from "./blocks.js";
 
 const registerBtn = document.querySelector('.btn-register');
 
@@ -15,5 +15,5 @@ registerBtn.addEventListener('click', () => {
 
     if (isNaN(width) || isNaN(height)) return alert('Invalid size');
 
-    addBlock(name || 'Block' + (blocks.length + 1), width, height, quantity || 1);
+    createBlock(name || 'Block' + (blocks.length + 1), width, height, quantity || 1);
 })

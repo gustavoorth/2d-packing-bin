@@ -1,8 +1,24 @@
-const drawBin = () => {
-    const bin = document.querySelector('#bin');
-    bin.innerHTML =
-        `<div id="block1" style="background-color: lightblue; width: 50px; height: 70px; position: absolute; top: 0px; left: 0px;"></div>
-        <div id="block2" style="background-color: lightgreen; width: 80px; height: 60px; position: absolute; top: 0px; left: 50px;"></div>`;
+import { bins } from "./bins.js";
+
+const drawBin = (bin) => {
+    const binDiv = document.querySelector('#bin');
+    binDiv.innerHTML = '';
+    for (const block of bins[bin].blocks) {
+        const blockDiv = document.createElement('div');
+        blockDiv.style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+        blockDiv.style.width = `${block.width}px`;
+        blockDiv.style.height = `${block.height}px`;
+        blockDiv.style.position = 'absolute';
+        blockDiv.style.top = block.y;
+        blockDiv.style.left = block.x;
+        binDiv.appendChild(blockDiv);
+    }
 }
 
-export { drawBin };
+const resizeBinContainer = (width, height) => {
+    const binDiv = document.querySelector('#bin');
+    binDiv.style.width = `${width}px`;
+    binDiv.style.height = `${height}px`;
+}
+
+export { drawBin, resizeBinContainer };

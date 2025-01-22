@@ -2,7 +2,7 @@ import { drawBlockList } from "./blockList.js";
 
 let blocks = await fetch('saved.json').then(response => response.json());
 
-const addBlock = (name, width, height, quantity) => {
+const createBlock = (name, width, height, quantity) => {
     const originalName = name;
     for (let i = 0; i < quantity; i++) {
         name = originalName;
@@ -12,7 +12,6 @@ const addBlock = (name, width, height, quantity) => {
     }
 
     organizeBlocks();
-
     drawBlockList();
 };
 
@@ -41,8 +40,4 @@ const organizeBlocks = () => {
     });
 };
 
-organizeBlocks();
-
-drawBlockList();
-
-export { addBlock, getBlocks, resetBlocks, removeBlock };
+export { createBlock, getBlocks, resetBlocks, removeBlock, organizeBlocks };

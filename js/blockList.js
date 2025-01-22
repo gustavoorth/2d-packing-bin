@@ -12,12 +12,13 @@ const drawBlockList = () => {
     });
 }
 
-document.addEventListener('click', e => {
-    if (e.target.classList.contains('bx-trash')) {
-        const block = e.target.parentElement.dataset.block;
-        removeBlock(block);
+const list = document.querySelector('#registered-blocks');
+list.addEventListener('click', ({ target }) => {
+    if (target.classList.contains('bx-trash')) {
+        removeBlock(target.closest('li').dataset.block);
         drawBlockList();
     }
-})
+}, { capture: true });
+
 
 export { drawBlockList };

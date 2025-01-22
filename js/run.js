@@ -1,22 +1,19 @@
-import { drawBin } from "./binDrawer.js";
+import { createBin, setBinMaxSize } from "./bins.js";
 import { getBlocks } from "./blocks.js";
+import { blockPlacer } from "./blockPlacer.js";
 
 const runBtn = document.querySelector('.btn-run');
-const binSize = document.querySelector('#binSize').value;
-const bin = document.querySelector('#bin');
 
 runBtn.addEventListener('click', () => {
-    let width, height;
-    if (binSize) {
-        [width, height] = binSize.split('x').map(x => parseInt(x, 10));
-    } else {
-        const block = getBlocks()[0];
-        width = block.width;
-        height = block.height;
-    }
+    const bin = document.querySelector('#bin');
+    const binSize = document.querySelector('#binSize').value;
 
-    bin.innerHTML = '';
+    const [width, height] = binSize ? binSize.split('x').map(Number) : [getBlocks()[0].width, getBlocks()[0].height];
+
     bin.style.width = `${width}px`;
     bin.style.height = `${height}px`;
-    drawBin();
+
+    createBin();
+    setBinMaxSize(width, height);
+    blockPlacer();
 });
